@@ -15,8 +15,12 @@
                 </th>
                 <th colspan="4">        
                     <div class="form-group mt-1">
-                        <input type="text" class="form-control form-control-sm me-2" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Search Name" style="max-width:300px; float: left;">
-                        <button type="submit" class="btn btn-outline-primary btn-sm">Find</button>
+
+                        <form action=" {{ route('web.search') }}" method="GET">
+                            <input type="text" class="form-control form-control-sm me-2" name="query" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Search Name" style="max-width:300px; float: left;">
+                            <button type="submit" class="btn btn-outline-primary btn-sm">Find</button>
+                        </form>
+
                     </div>  
                 </th>
             </tr>
