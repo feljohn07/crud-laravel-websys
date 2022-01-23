@@ -5,9 +5,9 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\SearchController;
 
 // Return the welcome.blade.php 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('members');
+});
 
 Route::get('/search', [SearchController::class, 'search'])->name('web.search');
 

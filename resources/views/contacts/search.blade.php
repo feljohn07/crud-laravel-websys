@@ -2,9 +2,12 @@
 @section('content')
 
         <div class="form-group mt-3">
-            <input type="text" class="form-control mb-2 me-2" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Search Name" style="max-width:300px; float: left;">
-            <a class="btn btn-primary mb-3" href="search.php">SEARCH</a>
-            <a class="btn btn-secondary mb-3" href="{{url('/contact')}}">BACK</a>
+            <form action=" {{ route('web.search') }}" method="GET">
+                <input type="text" class="form-control form-control-sm me-2" name="query" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Search Name" style="max-width:300px; float: left;">
+                <button type="submit" class="btn btn-outline-primary btn-sm">Find</button>
+
+                <a class="btn btn-secondary btn-sm" href="{{url('/contact')}}">BACK</a>
+            </form>
         </div>   
 
         <!-- TABLE -->
@@ -55,7 +58,7 @@
         </table>
         
         {{ $contacts->links() }}
-        
+
     </div>
 
 

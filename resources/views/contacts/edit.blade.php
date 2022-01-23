@@ -1,8 +1,10 @@
 @extends('layout.layout')
 @section('content')
  
-<div class="card">
+<div class="mx-auto card mt-5 justify-content-around" style="width: 500px">
+
   <div class="card-header">Contactus Page</div>
+
   <div class="card-body">
       
       <form action="{{ url('contact/' .$contacts->id) }}" method="post">
@@ -15,7 +17,8 @@
           <input type="text" name="address" id="address" value="{{$contacts->address}}" class="form-control"></br>
           <label>Mobile</label></br>
           <input type="text" name="mobile" id="mobile" value="{{$contacts->mobile}}" class="form-control"></br>
-          <input type="submit" value="Update" class="btn btn-success"></br>
+          <input type="submit" value="Update" class="btn btn-success btn-sm">
+          <a class="btn btn-secondary btn-sm" href="{{url('/contact')}}">BACK</a>
       </form>
    
   </div>
