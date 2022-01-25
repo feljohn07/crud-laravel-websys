@@ -19,7 +19,7 @@
             <label>Contact</label></br>
             <input type="text" name="contact" id="contact" value="{{ $appointments->contact }}" class="form-control"></br>
             <label>Date</label></br>
-            <input type="text" name="date" id="date" value="{{ $appointments->date }}" class="form-control"></br>
+            <input type="date" name="date" id="date" value="{{ $appointments->date }}" class="form-control"></br>
             <label>Time</label></br>
             <input type="time" name="time" id="time" value="{{ $appointments->time }}" class="form-control"></br>
             <label>Symptoms</label></br>

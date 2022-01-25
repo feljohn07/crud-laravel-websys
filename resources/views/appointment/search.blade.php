@@ -54,7 +54,7 @@
                             <th scope="row"> {{ $loop->iteration }}</th>
                             <td>{{ $item->firstname }}</td>
                             <td>{{ $item->lastname }}</td>
-                            <td>{{ $item->date }} {{ $item->time }}</td>
+                            <td>{{ $item->date }} {{ date('h:i A', strtotime($item->time)); }}</td>
 
                             {{-- Row Actions --}}
                             <td>
