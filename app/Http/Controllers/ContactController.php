@@ -42,7 +42,7 @@ class ContactController extends Controller
         return view('contacts.edit')->with('contacts', $contact);
     }
 
-  
+    // Updates the columns after editing the data.
     public function update(Request $request, $id){
         $contact = Contact::find($id);
         $input = $request->all();
@@ -50,17 +50,10 @@ class ContactController extends Controller
         return redirect('contact')->with('flash_message', 'Contact Updated!');  
     }
 
-   
+    // Delete a row on the table.
     public function destroy($id){
         Contact::destroy($id);
         return redirect('contact')->with('flash_message', 'Contact deleted!');  
-    }
-
-    public function search(Request $request){
-        $search_text = $request->input('query');
-        $contact = Contact::where('name', 'LIKE', '%'.$search_text.'%')->get();
-
-        return view('contacts.show')->with('contact', $contact);
     }
 
 }

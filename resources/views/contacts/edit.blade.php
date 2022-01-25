@@ -11,9 +11,9 @@
           {!! csrf_field() !!}
           @method("PATCH")
           <input type="hidden" name="id" id="id" value="{{$contacts->id}}" id="id" />
-          <label>Name</label></br>
+          <label>Firstname</label></br>
           <input type="text" name="name" id="name" value="{{$contacts->name}}" class="form-control"></br>
-          <label>Address</label></br>
+          <label>Lastname</label></br>
           <input type="text" name="address" id="address" value="{{$contacts->address}}" class="form-control"></br>
           <label>Mobile</label></br>
           <input type="text" name="mobile" id="mobile" value="{{$contacts->mobile}}" class="form-control"></br>

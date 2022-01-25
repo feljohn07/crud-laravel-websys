@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -37,19 +36,18 @@ class SearchController extends Controller{
 
             */
             
-            $contact = DB::table('contacts')
-                ->whereRaw("LOWER(name) LIKE any ".$search_text)
-                ->orWhereRaw("LOWER(address) LIKE any".$search_text)
+            $appointment = DB::table('appointment')
+                ->whereRaw("LOWER(firstname) LIKE any ".$search_text)
+                ->orWhereRaw("LOWER(lastname) LIKE any".$search_text)
                 // ->toSql();
                 ->paginate(5);
 
-            return view('contacts.search')->with('contacts', $contact);
+            return view('appointment.search')->with(array('appointment' => $appointment, 'query' => $_GET['query']));
 
-            // return $search_text . $last;
 
         }else{
 
-            return view('contacts.index');
+            return view('appointment.index');
         }  
     }
 }

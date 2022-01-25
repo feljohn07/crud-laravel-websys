@@ -20,6 +20,7 @@
                 <div class="card-body">
                     <h5 class="card-title">LYN VILLACORTA</h5>
                     <h6 class="card-subtitle mb-2 text-muted"></h6>
+                    <a onclick="window.open('https://github.com/simplecoderx/', '_blank')" class="card-link" style="cursor: pointer">Github</a>
                 </div>
             </div>
 
