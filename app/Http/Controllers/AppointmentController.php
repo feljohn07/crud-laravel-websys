@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class AppointmentController extends Controller
 {
+    // Retreive Data From the Table and return it to the index.blade.php
     public function index()
     {
         $appointments = Appointment::latest()->paginate(5);
