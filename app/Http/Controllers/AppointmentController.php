@@ -11,7 +11,7 @@ class AppointmentController extends Controller
     public function index()
     {
         $appointments = Appointment::latest()->paginate(5);
-        return view ('appointment.index', compact('appointments'));
+        return view('appointment.index', compact('appointments'));
     }
 
     // URL: /appointment/create => retuns the view create.blade.php
@@ -43,12 +43,12 @@ class AppointmentController extends Controller
         $appointments = Appointment::find($id);
         $input = $request->all();
         $appointments->update($input);
-        return redirect('appointment')->with('flash_message', 'Appointment Updated!');  
+        return redirect('appointment');  
     }
 
     // Delete a row on the table.
     public function destroy($id){
         Appointment::destroy($id);
-        return redirect('appointment')->with('flash_message', 'Appointment deleted!');  
+        return redirect('appointment');  
     }
 }

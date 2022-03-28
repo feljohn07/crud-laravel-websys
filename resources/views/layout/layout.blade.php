@@ -10,46 +10,42 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('js/jquery-3.6.0.js') }}" defer></script>
+    
 
 </head>
 
 <body>
   
-<div class="container">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
 
-    {{-- NAVIGATION BAR --}}
-    <nav class="navbar navbar-expand-md navbar-light bg-light p-2">
+      <a class="navbar-brand" href="#">Clinic Appointment</a>
 
-        <a class="navbar-brand" href="{{url('appointment')}}">Clinic Appointment</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-        {{-- NAV BAR MOBILE VIEW--}}
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        
+        {{-- <button class="btn btn-success" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">BUY</button> --}}
 
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-            {{-- NAV BAR DESKTOP VIEW --}}
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url('/') }}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href=" {{ url('/appointment') }}">Appointments</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url('/members') }}">Members</a>
+          </li>
 
-                    {{-- ROUTE HOME VIEW --}}
-                    <li class="nav-item active">
-                        <a class="nav-link btn btn-light me-2" href="{{url('/')}}">Home</a>
-                    </li>
-
-                    {{-- ROUTE TABLE VIEW --}}
-                    <li class="nav-item active">
-                        <a class="nav-link btn btn-light me-2" href="{{url('/appointment')}}">Appointments</a>
-                    </li>
-                    {{-- ROUTE MEMBERS VIEW --}}
-                    <li class="nav-item">
-                        <a class="nav-link btn btn-light me-2" href="{{url('/members')}}">Group Member</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+        </ul>
+      </div>
+    </div>
+  </nav> 
 
     @yield('content')
 </div>
